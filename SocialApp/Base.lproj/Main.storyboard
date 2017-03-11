@@ -26,18 +26,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diamond" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-Qh-Ote">
-                                        <rect key="frame" x="52" y="35" width="270" height="92"/>
+                                        <rect key="frame" x="52" y="39" width="273" height="88"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Qzf-Qh-Ote" secondAttribute="bottom" constant="23" id="5XO-z0-qWb"/>
-                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="leading" secondItem="AWo-9W-fep" secondAttribute="leading" constant="52" id="5oC-0V-hZD"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qzf-Qh-Ote" secondAttribute="trailing" constant="53" id="EKB-bE-b3o"/>
+                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="centerX" secondItem="AWo-9W-fep" secondAttribute="centerX" id="3Li-XV-FlD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qzf-Qh-Ote" secondAttribute="bottom" constant="23" id="B54-Dq-x45"/>
                                     <constraint firstAttribute="height" constant="150" id="GUP-AQ-lmj"/>
-                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="centerX" secondItem="AWo-9W-fep" secondAttribute="centerX" id="Pcy-R0-tkq"/>
-                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="centerY" secondItem="AWo-9W-fep" secondAttribute="centerY" id="Poe-iC-eRT"/>
-                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="top" secondItem="AWo-9W-fep" secondAttribute="top" constant="35" id="wW2-Tt-caU"/>
+                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="top" secondItem="AWo-9W-fep" secondAttribute="top" constant="39" id="H6Q-nO-UBy"/>
+                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="leading" secondItem="AWo-9W-fep" secondAttribute="leading" constant="52" id="Wb9-qC-tNB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qzf-Qh-Ote" secondAttribute="trailing" constant="50" id="fMc-a1-bMY"/>
+                                    <constraint firstItem="Qzf-Qh-Ote" firstAttribute="centerY" secondItem="AWo-9W-fep" secondAttribute="centerY" id="hQP-ZD-wGF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3A-Do-BXE">
@@ -131,11 +131,48 @@
                     <connections>
                         <outlet property="emailField" destination="KR5-SU-ibg" id="YOA-fU-5aa"/>
                         <outlet property="passwordField" destination="86D-s8-FNM" id="3qY-Ls-OW1"/>
+                        <segue destination="iRs-lO-VsH" kind="show" identifier="goToFeed" id="eU9-h7-SO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="143.19999999999999" y="117.39130434782609"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="xMt-fb-Rof">
+            <objects>
+                <viewController id="iRs-lO-VsH" customClass="FeedVC" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ICv-YC-2KR"/>
+                        <viewControllerLayoutGuide type="bottom" id="sOh-wL-w7B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aae-r7-YFy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOd-53-DUB">
+                                <rect key="frame" x="157.5" y="318" width="60" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInTapped:" destination="iRs-lO-VsH" eventType="touchUpInside" id="fAP-EZ-djd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28252881769999999" green="0.40290221570000001" blue="0.66587537529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kOd-53-DUB" firstAttribute="centerX" secondItem="aae-r7-YFy" secondAttribute="centerX" id="Gox-yU-vuZ"/>
+                            <constraint firstItem="kOd-53-DUB" firstAttribute="centerY" secondItem="aae-r7-YFy" secondAttribute="centerY" id="RK6-t5-PDO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="fS7-kc-EUi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzK-2x-Qq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864.79999999999995" y="117.39130434782609"/>
         </scene>
     </scenes>
     <resources>
