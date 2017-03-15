@@ -37,6 +37,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
         
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
@@ -83,14 +85,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 
                 cell.configureCell(post: post, img: img)
                 
-                return cell
-                
             } else {
              
                 cell.configureCell(post: post, img: nil)
-                
-                return cell
+
             }
+            
+            return cell
             
         } else {
             
@@ -158,7 +159,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     print("JESS: Successfully uploaded image to Firebase Storage")
                     
                     let downloadURL = metadata?.downloadURL()?.absoluteString
-                    
                     
                     if let url = downloadURL {
                         
